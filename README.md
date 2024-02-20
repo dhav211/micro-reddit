@@ -1,1 +1,1 @@
-# micro-reddit
+# Micro Reddit
