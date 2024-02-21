@@ -1,0 +1,17 @@
+<table>
+  <% @posts.each do |post| %>
+    <tr class="table-post-title">
+      <td>
+        <%= link_to post.title, post.url %>
+      </td>
+    </tr>
+    <tr class="table-post-details">
+      <td>
+        <span>Posted by <%= post.user.name %></span>
+        <span><%= time_ago_in_words post.created_at %></span>
+        <span><%= pluralize post.comments.size, "comment" %></span>
+      </td>
+    </tr>
+    <tr class="table-spacer"></tr>
+  <% end %>
+</table>
