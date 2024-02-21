@@ -1,0 +1,16 @@
+<h2><%= link_to @post.title, @post.url %></h2>
+<table>
+  <% @comments.each do |comment| %>
+    <tr>
+      <td>
+        <%= comment.user.name %> <%= time_ago_in_words(comment.created_at).gsub('about', '')%>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= comment.text %>
+      </td>
+    </tr>
+    <tr class="table-spacer"></tr>
+  <% end %>
+</table>
