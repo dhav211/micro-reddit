@@ -2,11 +2,14 @@
     <h1>MicroReddit</h1>
     <div class="user-area">
     <% if !signed_in? %>
-        <span>Sign In</span>
         <%= form_with url: sessions_path do |form| %>
-        <span><%= form.text_field :username %></span>
+            <span><%= form.label 'Sign In' %></span>
+            <span><%= form.text_field :username %></span>
         <% end %>
-        <span>Sign Up</span>
+        <%= form_with url: users_path do |form| %>
+            <span><%= form.label 'Sign Up' %></span>
+            <span><%= form.text_field :username %></span>
+        <% end %>
     <% else %>
         <span><%= current_user.name %></span>
         <span><%= button_to 'Sign Out', signout_path, method: :delete%></span>
