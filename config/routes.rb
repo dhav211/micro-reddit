@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :create]
   resources :sessions, only: [:create]
   resources :users, only: [:create]
+  resources :comments, only: [:create]
   delete 'signout', to: 'sessions#destroy'
 
   # Defines the root path route ("/")

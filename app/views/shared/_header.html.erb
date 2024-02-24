@@ -1,5 +1,5 @@
 <header>
-    <h1>MicroReddit</h1>
+    <h1><%= link_to 'MicroReddit', posts_path %></h1>
     <div class="user-area">
     <% if !signed_in? %>
         <%= form_with url: sessions_path do |form| %>

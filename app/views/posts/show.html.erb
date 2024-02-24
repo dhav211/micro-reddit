@@ -1,4 +1,16 @@
 <h2><%= link_to @post.title, @post.url %></h2>
+<% if signed_in? %>
+  <%= form_with model: @new_comment do |form| %>
+    <%= form.hidden_field :post_id, value: @post.id %>
+    <%= form.text_area :text %>
+    <%= form.submit %>
+  <% end %>
+<% end %>
+
+<% if @comments.size.zero? %>
+  <p>There are no posts</p>
+<% end %>
+
 <table>
   <% @comments.each do |comment| %>
     <tr>
